@@ -1,0 +1,15 @@
+---
+source_directory:       .
+build_directory:        .
+layout:                 together
+
+builds:
+  min:
+    shrink_vars:        true
+    private:            true
+
+packages:
+  location-picker:
+    files:
+      - location-picker
+

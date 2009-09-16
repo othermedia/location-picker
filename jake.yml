@@ -12,4 +12,18 @@ packages:
   location-picker:
     files:
       - location-picker
+    meta:
+      requires:
+        - JS.MethodChain
+        - JS.Class
+        - GMap2
+        - GClientGeocoder
+        - GEvent
+        - GLatLng
+        - GMarker
+      uses:
+        - Ojay
+        - Ojay.HTML
+      provides:
+        - LocationPicker
 

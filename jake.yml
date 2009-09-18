@@ -1,6 +1,6 @@
 ---
-source_directory:       .
-build_directory:        .
+source_directory:       source
+build_directory:        build
 layout:                 together
 
 builds:

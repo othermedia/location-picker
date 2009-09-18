@@ -15,7 +15,7 @@ if (window.GMap2) JS.MethodChain.addMethods(GMap2);
  * they want. Interaction fires events that can export the current marker
  * position to form fields.
  **/
-var LocationPicker = new JS.Class({
+LocationPicker = new JS.Class({
     extend: {
         // Default dimensions
         WIDTH:              600,

@@ -179,7 +179,6 @@ LocationPicker = new JS.Class({
                 zoom = this._map.getBoundsZoomLevel(bounds);
             
             this._loc = new GLatLng(coords[1], coords[0]);
-            console.log(this._loc);
             this._map.setCenter(this._loc, zoom);
             this.positionMarker();
         }.bind(this));

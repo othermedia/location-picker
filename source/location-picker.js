@@ -121,8 +121,8 @@ LocationPicker = new JS.Class({
      **/
     pullLocation: function() {
         var lat = (this._latField||{}).value, lng = (this._lngField||{}).value;
-        if (lat === undefined) lat = this.klass.DEFAULT_LATITUDE;
-        if (lng === undefined) lng = this.klass.DEFAULT_LONGITUDE;
+        if (!lat) lat = this.klass.DEFAULT_LATITUDE;
+        if (!lng) lng = this.klass.DEFAULT_LONGITUDE;
         
         this._loc = new GLatLng(Number(lat), Number(lng));
         this._map.setCenter(this._loc, this.klass.ZOOM_LEVEL);
@@ -167,10 +167,20 @@ LocationPicker = new JS.Class({
      * marker to the resulting location.
      **/
     search: function() {
-        this.klass.getGeocoder().getLatLng(this._elements._address.value, function(latlng) {
-            if (latlng === null) return;
-            this._loc = latlng;
-            this._map.setCenter(latlng);
+        this.klass.getGeocoder().getLocations(this._elements._address.value, function(response) {
+            var place = response.Placemark[0];
+            if (!place) return;
+            
+            var coords = place.Point.coordinates,
+                box    = place.ExtendedData.LatLonBox,
+                bounds = new GLatLngBounds(new GLatLng(box.south, box.west),
+                                           new GLatLng(box.north, box.east)),
+                
+                zoom = this._map.getBoundsZoomLevel(bounds);
+            
+            this._loc = new GLatLng(coords[1], coords[0]);
+            console.log(this._loc);
+            this._map.setCenter(this._loc, zoom);
             this.positionMarker();
         }.bind(this));
     },

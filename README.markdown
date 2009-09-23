@@ -12,7 +12,7 @@ Usage
 
 If loading through Helium, the Google API key must be set:
 
-    Helium.GOOGLE_KEY = '{your API key}';
+    Helium.GOOGLE_API_KEY = '{your API key}';
 
 Instantiate the widget by specifying the dimensions of the map and references to the
 form fields that should be updated when the marker is moved:

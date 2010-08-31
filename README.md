@@ -72,7 +72,7 @@ form fields that should be updated when the marker is moved:
     });
 
 The first two arguments specify where to insert the widget in the document;
-here we insert it `after` the element selected by `#dataForm`. THe other valid
+here we insert it `after` the element selected by `#dataForm`. The other valid
 position arguments are `before`, `top` and `bottom`.
 
   [helium]:    http://github.com/othermedia/helium

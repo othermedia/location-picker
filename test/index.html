@@ -1,43 +1,32 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html><head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>LocationPicker Tests</title>
     
-    <script src="http://localhost:9292/js/helium.js" type="text/javascript"></script>
-    
+    <script src="http://js.othermedia.com/helium.js" type="text/javascript"></script>
     <script type="text/javascript">
-    // http://localhost:8000
-    Helium.GOOGLE_API_KEY = 'ABQIAAAArVbgzt5nxAQAZ_iB_77caBQCULP4XOMyhPd8d_NrQQEO8sT8XBTzVWhRwEDkVfNsvzo8bf4ntGV4ZQ';
-    
-    // http://10.0.2.2:8000
-    // Helium.GOOGLE_API_KEY = 'ABQIAAAArVbgzt5nxAQAZ_iB_77caBR-5oywdloojr3wCGctvtY4YLrIFxTp2Uv8Tzdhpc707bQaOPGPEQ3PzA';
-    
-    Helium.use('yui', '2.7.0');
-    Helium.use('ojay', 'master');
+        Helium.GOOGLE_API_KEY = 'ABQIAAAArVbgzt5nxAQAZ_iB_77caBQCULP4XOMyhPd8d_NrQQEO8sT8XBTzVWhRwEDkVfNsvzo8bf4ntGV4ZQ';
+        Helium.use('yui', '2.8.0r4');
+        Helium.use('ojay', '0.4.2');
     </script>
-    
-    <!-- Package file for location-picker (run `jake` to generate this) -->
     <script src="./packages.js" type="text/javascript"></script>
-  </head>
-  <body>
+</head><body>
     
     <form>
-      <label for="lat">Latitude</label> <input id="lat" type="text" value=""><br>
-      <label for="lng">Latitude</label> <input id="lng" type="text" value="">
+        <p><label for="lat">Latitude</label> <input id="lat" type="text" value=""></p>
+        <p><label for="lng">Latitude</label> <input id="lng" type="text" value=""></p>
     </form>
     
     <script type="text/javascript">
-    require('LocationPicker', function() {
+        require('LocationPicker', function() {
         
-        new LocationPicker('after', 'form', {
-            width:      600,
-            height:     400,
-            latField:   '#lat',
-            lngField:   '#lng'
+            new LocationPicker('after', 'form', {
+                width:      600,
+                height:     400,
+                latField:   '#lat',
+                lngField:   '#lng'
+            });
         });
-    });
     </script>
     
-  </body>
-</html>
+</body></html>

@@ -62,3 +62,43 @@ position arguments are `before`, `top` and `bottom`.
 
   [helium]:    http://github.com/othermedia/helium
   [gmap2docs]: http://code.google.com/apis/maps/documentation/javascript/v2/index.html
+
+
+API methods
+-----------
+
+Instances of the `LocationPicker` class have the following methods available.
+
+### `LocationPicker#getHTML()`
+
+Returns the HTML representation of the widget.
+
+### `LocationPicker#pullLocation()`
+
+Extracts location data from the form fields and updates the marker location.
+
+### `LocationPicker#pushLocation()`
+
+Updates the form fields with the current marker position.
+
+### `LocationPicker#getMarker()`
+
+Returns the Google Maps marker used by the widget.
+
+### `LocationPicker#positionMarker()`
+
+Places the marker at the correct location and updates the form fields.
+
+### `LocationPicker#search([address])`
+
+Runs a geocoding search using the current address value and moves the marker to
+the resulting location. If the `address` parameter is provided, the address
+field will be set to that value prior to performing the search.
+
+### `LocationPicker#getAddress()`
+
+Returns the value of the address field.
+
+### `LocationPicker#setAddress(address)`
+
+Sets the value attribute of the address field to the `address` argument.

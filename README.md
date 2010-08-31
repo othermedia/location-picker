@@ -46,14 +46,29 @@ Otherwise, load the Google Maps library as specified in the
 
 ### Using `LocationPicker`
 
+To use the `LocationPicker` class you'll need some HTML elements to plug it
+into.
+
+    <form id="dataForm">
+        <p>
+            <label for="lat">Latitude</label>
+            <input id="lat" name="lat" type="text" value="">
+        </p>
+        
+        <p>
+            <label for="lng">Latitude</label>
+            <input id="lng" name="lng" type="text" value="">
+        </p>
+    </form>
+
 Instantiate the widget by specifying the dimensions of the map and references to the
 form fields that should be updated when the marker is moved:
 
     new LocationPicker('after', '#dataForm', {
         width:      600,
         height:     400,
-        latField:   '#dataForm [name=lat]',
-        lngField:   '#dataForm [name=lng]'
+        latField:   '#lat',
+        lngField:   '#lng'
     });
 
 The first two arguments specify where to insert the widget in the document;

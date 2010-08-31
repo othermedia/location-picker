@@ -194,7 +194,7 @@ LocationPicker = new JS.Class({
      * Returns the value of the address field.
      */
     getAddress: function() {
-        return this._elements.address.value;
+        return this._elements._address.value;
     },
     
     /**

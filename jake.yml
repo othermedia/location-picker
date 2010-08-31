@@ -16,14 +16,13 @@ packages:
       requires:
         - JS.MethodChain
         - JS.Class
+        - Ojay
         - GMap2
         - GClientGeocoder
         - GEvent
         - GLatLng
         - GMarker
       uses:
-        - Ojay
         - Ojay.HTML
       provides:
         - LocationPicker
-

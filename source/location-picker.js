@@ -180,7 +180,6 @@ LocationPicker = new JS.Class({
                 box    = place.ExtendedData.LatLonBox,
                 bounds = new GLatLngBounds(new GLatLng(box.south, box.west),
                                            new GLatLng(box.north, box.east)),
-                
                 zoom = this._map.getBoundsZoomLevel(bounds);
             
             this._loc = new GLatLng(coords[1], coords[0]);

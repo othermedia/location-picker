@@ -48,7 +48,7 @@ LocationPicker = new JS.Class({
          * Returns a geocoder object from Google Maps.
          **/
         getGeocoder: function() {
-        	return this._geoc = this._geoc || new GClientGeocoder();
+            return this._geoc = this._geoc || new GClientGeocoder();
         }
     },
     
@@ -163,11 +163,16 @@ LocationPicker = new JS.Class({
     
     /**
      * LocationPicker#search() -> undefined
+     * - address (String)
      * Runs a geocoding search using the current address value and moves the
-     * marker to the resulting location.
+     * marker to the resulting location. If the address parameter is provided,
+     * the address field will be set to that value prior to performing the
+     * search.
      **/
-    search: function() {
-        this.klass.getGeocoder().getLocations(this._elements._address.value, function(response) {
+    search: function(address) {
+        if (address) this.setAddress(address);
+        
+        this.klass.getGeocoder().getLocations(this.getAddress(), function(response) {
             var place = response.Placemark[0];
             if (!place) return;
             
@@ -185,6 +190,14 @@ LocationPicker = new JS.Class({
     },
     
     /**
+     * LocationPicker#getAddress() -> String
+     * Returns the value of the address field.
+     */
+    getAddress: function() {
+        return this._elements.address.value;
+    },
+    
+    /**
      * LocationPicker#setAddress(value) -> undefined
      * - value (String)
      * Sets the value of the address field.
@@ -193,4 +206,3 @@ LocationPicker = new JS.Class({
         this._elements._address.value = value;
     }
 });
-
